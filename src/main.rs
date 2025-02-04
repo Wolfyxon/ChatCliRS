@@ -1,3 +1,5 @@
+use std::thread;
+
 use utils::input;
 
 mod utils;
@@ -24,7 +26,10 @@ fn query_main_mode() {
             
             let port = 2400; // TODO: input port from user
 
-            server::host(2400);
+            thread::spawn(|| {
+                server::host(2400);
+            });
+            
             client::join(format!("localhost:{port}"));
         }
         "2" => {

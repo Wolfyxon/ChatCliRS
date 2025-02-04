@@ -8,7 +8,7 @@ pub fn join(address: String) {
             loop {
                 let mut buf: [u8; 256] = [0; 256];
                 
-                match client.read_exact(&mut buf) {
+                match client.read(&mut buf) {
                     Ok(_) => {
                         println!("{:?}", buf);
                     }

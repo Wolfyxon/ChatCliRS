@@ -26,10 +26,10 @@ fn query_main_mode() {
             
             let port = 2400; // TODO: input port from user
 
-            thread::spawn(|| {
-                server::host(2400);
+            thread::spawn(move || {
+                server::host(port);
             });
-            
+
             client::join(format!("localhost:{port}"));
         }
         "2" => {

@@ -21,7 +21,11 @@ fn query_main_mode() {
     match action.as_str() {
         "1" => {
             println!("Starting server");
-            server::host(2462);
+            
+            let port = 2400; // TODO: input port from user
+
+            server::host(2400);
+            client::join(format!("localhost:{port}"));
         }
         "2" => {
             print!("Enter address: ");

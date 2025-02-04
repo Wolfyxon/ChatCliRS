@@ -24,7 +24,7 @@ fn query_main_mode() {
             server::host(2462);
         }
         "2" => {
-            print!("Enter address:");
+            print!("Enter address: ");
             let addr = input();
 
             println!("Joining...");
